@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>我的民宿预订</title>
+</head>
+<body>
+    <h1>欢迎预订</h1>
+    <button id="checkout-button">立即支付</button>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        // 这是你刚才发给我的公开密钥
+        var stripe = Stripe('pk_test_51P3XAUBi0Jg2l8bIsmtMaZkP9Y0Y4IN9onI4Qx5qBjLalNd8K5xj8kiwPN4cdqqsfgo8UkjysWowy3CkeFc6gErT00joNe0x7K');
+
+        document.getElementById('checkout-button').addEventListener('click', function () {
+            stripe.redirectToCheckout({
+                lineItems: [{
+                    // 这里填你在 Stripe 后台拿到的那个 price_...
+                    price: '这里换成你的price_ID', 
+                    quantity: 1
+                }],
+                mode: 'payment',
+                successUrl: 'https://jocelyn5928.github.io/Homestay/success.html',
+                cancelUrl: 'https://jocelyn5928.github.io/Homestay/',
+            });
+        });
+    </script>
+</body>
+</html>
