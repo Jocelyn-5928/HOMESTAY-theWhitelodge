@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The White Lodge - 扫码预订</title>
+    <title>The White Lodge - 欢迎预订</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -13,6 +13,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            /* 民宿风格背景图 */
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                         url('https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
@@ -21,19 +22,20 @@
 
         .card { 
             background: rgba(255, 255, 255, 0.98); 
-            padding: 40px 30px; 
+            padding: 50px 30px; 
             border-radius: 30px; 
             box-shadow: 0 20px 50px rgba(0,0,0,0.3); 
             text-align: center; 
-            max-width: 400px; 
+            max-width: 420px; 
             width: 90%;
+            backdrop-filter: blur(10px);
         }
 
         h1 { 
-            font-size: 42px; 
+            font-size: 45px; /* 加大招牌字 */
             font-weight: 800;
             color: #1a1a1a;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             letter-spacing: -1px;
         }
 
@@ -48,25 +50,25 @@
             padding: 15px;
             border: 2px solid #f0f0f0;
             border-radius: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .qr-image {
             width: 100%;
-            max-width: 280px;
+            max-width: 250px;
             height: auto;
             display: block;
             margin: 0 auto;
         }
 
-        .notice {
+        .notice-badge {
+            display: inline-block;
             background: #fff5f5;
             color: #e53e3e;
-            padding: 15px;
-            border-radius: 15px;
+            padding: 12px 20px;
+            border-radius: 12px;
             font-size: 15px;
             font-weight: bold;
-            line-height: 1.5;
             border: 1px solid #fed7d7;
         }
     </style>
@@ -74,15 +76,14 @@
 <body>
     <div class="card">
         <h1>The White Lodge</h1>
-        <p>请扫码支付预订金</p>
+        <p>扫码支付，开启您的温馨之旅</p>
         
         <div class="qr-box">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=TheWhiteLodge" alt="收款二维码" class="qr-image">
-</div>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=WelcomeToTheWhiteLodge" alt="收款二维码" class="qr-image">
+        </div>
 
-
-        <div class="notice">
-            📸 支付后请务必【截图】<br>发送至我们的 WhatsApp 确认
+        <div class="notice-badge">
+            📸 支付后请务必【截图】<br>发送至您的预订窗口确认
         </div>
     </div>
 </body>
