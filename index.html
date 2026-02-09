@@ -3,87 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The White Lodge - 欢迎预订</title>
+    <title>The White Lodge - 咨询与预订</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         body { 
-            font-family: -apple-system, "Helvetica Neue", sans-serif;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* 民宿风格背景图 */
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
+            font-family: -apple-system, "Helvetica Neue", sans-serif; height: 100vh; display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover; background-position: center;
         }
+        .card { background: rgba(255, 255, 255, 0.98); padding: 40px 25px; border-radius: 30px; text-align: center; max-width: 420px; width: 95%; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+        h1 { font-size: 38px; font-weight: 800; color: #1a1a1a; margin-bottom: 5px; }
+        .sub-text { color: #666; font-size: 16px; margin-bottom: 25px; }
+        
+        /* WhatsApp 绿色大按钮 */
+        .ws-btn {
+            display: flex; align-items: center; justify-content: center;
+            background-color: #25D366; color: white; padding: 18px;
+            text-decoration: none; border-radius: 15px; font-weight: bold;
+            font-size: 18px; margin-bottom: 30px; transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(37,211,102,0.3);
+        }
+        .ws-btn:hover { background-color: #128C7E; transform: scale(1.02); }
 
-        .card { 
-            background: rgba(255, 255, 255, 0.98); 
-            padding: 50px 30px; 
-            border-radius: 30px; 
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3); 
-            text-align: center; 
-            max-width: 420px; 
-            width: 90%;
-            backdrop-filter: blur(10px);
-        }
+        .divider { border-top: 1px solid #eee; margin: 25px 0; position: relative; }
+        .divider span { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: white; padding: 0 15px; color: #999; font-size: 14px; }
 
-        h1 { 
-            font-size: 45px; /* 加大招牌字 */
-            font-weight: 800;
-            color: #1a1a1a;
-            margin-bottom: 8px;
-            letter-spacing: -1px;
-        }
-
-        p { 
-            color: #666; 
-            font-size: 18px;
-            margin-bottom: 25px; 
-        }
-
-        .qr-box {
-            background: #fff;
-            padding: 15px;
-            border: 2px solid #f0f0f0;
-            border-radius: 20px;
-            margin-bottom: 25px;
-        }
-
-        .qr-image {
-            width: 100%;
-            max-width: 250px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .notice-badge {
-            display: inline-block;
-            background: #fff5f5;
-            color: #e53e3e;
-            padding: 12px 20px;
-            border-radius: 12px;
-            font-size: 15px;
-            font-weight: bold;
-            border: 1px solid #fed7d7;
-        }
+        .qr-section { background: #f9f9f9; padding: 20px; border-radius: 20px; border: 1px dashed #ddd; }
+        .qr-image { width: 100%; max-width: 200px; height: auto; margin: 10px 0; }
+        .payment-tip { font-size: 13px; color: #e53e3e; font-weight: bold; margin-top: 5px; }
     </style>
 </head>
 <body>
     <div class="card">
         <h1>The White Lodge</h1>
-        <p>扫码支付，开启您的温馨之旅</p>
-        
-        <div class="qr-box">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=WelcomeToTheWhiteLodge" alt="收款二维码" class="qr-image">
-        </div>
+        <p class="sub-text">温馨·舒适·宁静的民宿体验</p>
 
-        <div class="notice-badge">
-            📸 支付后请务必【截图】<br>发送至您的预订窗口确认
+        <a href="https://wa.me/601168744885?text=您好！我想咨询 The White Lodge 的预订详情。" class="ws-btn">
+            💬 WhatsApp 咨询 / 预订
+        </a>
+
+        <div class="divider"><span>或确认日期后直接支付</span></div>
+
+        <div class="qr-section">
+            <p style="font-size: 14px; color: #333;">扫码支付预订金：</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=TheWhiteLodge" class="qr-image">
+            <p class="payment-tip">📸 支付后请发送截图至 WhatsApp</p>
         </div>
     </div>
 </body>
