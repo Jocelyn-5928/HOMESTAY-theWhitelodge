@@ -6,79 +6,63 @@
     <title>The White Lodge - i-City</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, sans-serif; background: #f4f4f7; color: #333; line-height: 1.6; }
+        body { font-family: -apple-system, sans-serif; background: #f4f4f7; color: #333; }
         .container { max-width: 500px; margin: 0 auto; background: #fff; min-height: 100vh; padding-bottom: 50px; }
-        
-        /* 封面图：直接完整显示 */
         .hero-img { width: 100%; height: auto; display: block; }
-        
         .content { padding: 20px; text-align: center; }
-        
-        /* 这里的状态标签更精致一点 */
-        .info-badge { background: #fff4e6; color: #d9480f; padding: 12px; border-radius: 15px; font-size: 13px; font-weight: bold; margin: 15px 0; border: 1px solid #ffd8a8; display: flex; justify-content: space-around; }
-        
-        /* 地址和导航 */
-        .address-box { background: #f8f9fb; padding: 18px; border-radius: 20px; margin-bottom: 25px; border: 1px solid #eee; }
-        .address-text { font-size: 13px; color: #666; margin-bottom: 15px; display: block; }
-        
-        .btn { display: flex; align-items: center; justify-content: center; padding: 16px; border-radius: 15px; text-decoration: none; font-weight: bold; transition: 0.3s; gap: 10px; border: none; cursor: pointer; width: 100%; }
-        .btn-ws { background: #25D366; color: white; font-size: 18px; box-shadow: 0 4px 15px rgba(37,211,102,0.3); margin-bottom: 25px; }
+        .btn { display: flex; align-items: center; justify-content: center; padding: 16px; border-radius: 15px; text-decoration: none; font-weight: bold; width: 100%; margin-bottom: 20px; }
+        .btn-ws { background: #25D366; color: white; font-size: 18px; }
         .btn-map { background: #4285F4; color: white; font-size: 15px; }
-        
-        .section-title { font-size: 16px; margin-bottom: 15px; font-weight: bold; color: #444; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        
-        /* 视频容器：配合你新改的水印位置 */
-        .video-container { 
-            position: relative; 
-            padding-bottom: 177.78%; /* 标准 9:16 比例 */
-            height: 0; 
-            overflow: hidden; 
-            border-radius: 20px; 
-            background: #000; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
+        .video-container { position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden; border-radius: 20px; background: #000; margin: 20px 0; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
     </style>
 </head>
 <body>
-
 <div class="container">
-    <img src="cover.jpg?v=2" class="hero-img">
-
+    <img src="cover.jpg" class="hero-img">
     <div class="content">
-        <a href="javascript:void(0)" onclick="sendWhatsApp()" class="btn btn-ws">
-            💬 点击 WhatsApp 立即预订
-        </a>
+        <a href="https://wa.me/601168744885" class="btn btn-ws">💬 WhatsApp 立即预订</a>
 
-        <div class="section-title">🎥 房间实拍预览 / Tour</div>
         <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/QGxvNOpexX8?modestbranding=1&rel=0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/?modestbranding=1&rel=0" allowfullscreen></iframe>
         </div>
 
-        <div class="info-badge">
-            <span>🔑 自助入住</span>
-            <span>📶 免费 WiFi</span>
-            <span>🏊‍♂️ 泳池/健身房</span>
-        </div>
-
-        <div class="address-box">
-            <span class="address-text">📍 Hyde Tower, i-City, Shah Alam, Selangor</span>
-            <a href="https://www.google.com/maps/search/?api=1&query=THE+WHITE+LODGE+HOMESTAY+i-City" target="_blank" class="btn btn-map">
-                🚗 点击打开 Google Maps 导航
-            </a>
-        </div>
-
-        <p style="font-size: 12px; color: #bbb; margin-top: 20px;">© The White Lodge Homestay</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=THE+WHITE+LODGE+HOMESTAY+HYDE+TOWER" target="_blank" class="btn btn-map">🚗 导航到 The White Lodge (Google Maps)</a>
     </div>
 </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The White Lodge - i-City</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, sans-serif; background: #f4f4f7; color: #333; }
+        .container { max-width: 500px; margin: 0 auto; background: #fff; min-height: 100vh; padding-bottom: 50px; }
+        .hero-img { width: 100%; height: auto; display: block; }
+        .content { padding: 20px; text-align: center; }
+        .btn { display: flex; align-items: center; justify-content: center; padding: 16px; border-radius: 15px; text-decoration: none; font-weight: bold; width: 100%; margin-bottom: 20px; }
+        .btn-ws { background: #25D366; color: white; font-size: 18px; }
+        .btn-map { background: #4285F4; color: white; font-size: 15px; }
+        .video-container { position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden; border-radius: 20px; background: #000; margin: 20px 0; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img src="cover.jpg" class="hero-img">
+    <div class="content">
+        <a href="https://wa.me/601168744885" class="btn btn-ws">💬 WhatsApp 立即预订</a>
 
-<script>
-    function sendWhatsApp() {
-        const phone = "601168744885";
-        let message = `Hello! I'm interested in The White Lodge @ i-City. Can I check the availability?`;
-        window.location.href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    }
-</script>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/edAhz79IIcg?modestbranding=1&rel=0" allowfullscreen></iframe>
+        </div>
 
+        <a href="https://www.google.com/maps/search/?api=1&query=THE+WHITE+LODGE+HOMESTAY+HYDE+TOWER" target="_blank" class="btn btn-map">🚗 导航到 The White Lodge (Google Maps)</a>
+    </div>
+</div>
 </body>
 </html>
