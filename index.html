@@ -8,38 +8,37 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, sans-serif; background: #f4f4f7; color: #333; line-height: 1.6; }
         .container { max-width: 500px; margin: 0 auto; background: #fff; min-height: 100vh; padding-bottom: 50px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
-        
-        /* 封面图优化：确保不切掉名字和联系方式 */
         .hero-img { width: 100%; height: auto; display: block; }
-        
         .content { padding: 20px; }
         h1 { font-size: 26px; font-weight: 800; margin-bottom: 5px; color: #1a1a1a; text-align: center; }
         .sub-title { text-align: center; color: #666; font-size: 14px; margin-bottom: 20px; display: block; }
-        
         .info-badge { background: #fff4e6; color: #d9480f; padding: 12px; border-radius: 12px; font-size: 13px; font-weight: bold; text-align: center; margin-bottom: 20px; border: 1px solid #ffd8a8; display: flex; align-items: center; justify-content: center; gap: 10px; }
-        
         .address-box { background: #f8f9fb; padding: 15px; border-radius: 15px; margin-bottom: 15px; border: 1px solid #eee; }
-        .address-text { font-size: 13px; color: #666; margin-bottom: 12px; display: block; text-align: center; }
-        
         .btn { display: flex; align-items: center; justify-content: center; padding: 16px; border-radius: 15px; text-decoration: none; font-weight: bold; transition: 0.3s; gap: 8px; border: none; cursor: pointer; width: 100%; }
-        .btn-ws { background: #25D366; color: white; font-size: 18px; box-shadow: 0 4px 15px rgba(37,211,102,0.3); margin-top: 10px; }
+        .btn-ws { background: #25D366; color: white; font-size: 18px; box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
         .btn-map { background: #4285F4; color: white; font-size: 14px; }
+        .section-title { font-size: 16px; margin-bottom: 12px; font-weight: bold; color: #444; margin-top: 30px; border-left: 4px solid #d9480f; padding-left: 10px; }
         
-        .section-title { font-size: 16px; margin-bottom: 12px; font-weight: bold; color: #444; margin-top: 25px; border-left: 4px solid #d9480f; padding-left: 10px; }
-        
-        /* 视频比例 */
-        .video-container { position: relative; padding-bottom: 177%; height: 0; overflow: hidden; border-radius: 20px; background: #000; margin-bottom: 25px; }
+        /* 增加顶部间距，把视频往下推 */
+        .video-container { 
+            position: relative; 
+            padding-bottom: 177%; 
+            height: 0; 
+            overflow: hidden; 
+            border-radius: 20px; 
+            background: #000; 
+            margin-top: 10px; /* 顶部留白 */
+            margin-bottom: 30px; 
+        }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         
-        /* 预订提醒区域 */
-        .booking-tip { background: #f0f7ff; border: 1px dashed #4285F4; padding: 20px; border-radius: 20px; text-align: center; margin-top: 10px; }
-        .tip-text { color: #0056b3; font-weight: bold; font-size: 15px; margin-bottom: 15px; display: block; }
+        .booking-card { background: #fff; border: 2px solid #25D366; padding: 20px; border-radius: 20px; text-align: center; margin-bottom: 10px; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <img src="cover.jpg?v=final" class="hero-img" alt="The White Lodge Cover">
+    <img src="cover.jpg?v=final" class="hero-img">
 
     <div class="content">
         <h1>THE WHITE LODGE</h1>
@@ -52,21 +51,19 @@
         </div>
         
         <div class="address-box">
-            <span class="address-text">📍 Hyde Tower, Seksyen 7, 40000 Shah Alam, Selangor</span>
-            <a href="https://www.google.com/maps/search/?api=1&query=THE+WHITE+LODGE+HOMESTAY+i-City" target="_blank" class="btn btn-map">
-                🚗 点击打开 Google Maps 导航
-            </a>
+            <p style="font-size: 13px; color: #666; text-align: center; margin-bottom: 10px;">📍 Hyde Tower, Seksyen 7, 40000 Shah Alam</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=THE+WHITE+LODGE+HOMESTAY+i-City" target="_blank" class="btn btn-map">🚗 打开 Google Maps 导航</a>
         </div>
 
-        <div class="section-title">🎥 房间实拍 / Virtual Tour</div>
+        <div class="section-title">📅 立即预订 / Booking</div>
+        <div class="booking-card">
+            <p style="font-size: 15px; margin-bottom: 15px; font-weight: bold; color: #128C7E;">✨ 咨询档期与价格，请点击下方：</p>
+            <button onclick="sendWhatsApp()" class="btn btn-ws">💬 WhatsApp 联系房东</button>
+        </div>
+
+        <div class="section-title">🎥 房间实拍预览</div>
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/QGxvNOpexX8?modestbranding=1&rel=0" allowfullscreen></iframe>
-        </div>
-
-        <div class="booking-tip">
-            <span class="tip-text">✨ 喜欢这间房吗？现在就咨询档期！</span>
-            <button onclick="sendWhatsApp()" class="btn btn-ws">💬 点击 WhatsApp 立即预订</button>
-            <p style="font-size: 12px; color: #666; margin-top: 10px;">房东会在线回复您的咨询</p>
         </div>
     </div>
 </div>
@@ -74,7 +71,7 @@
 <script>
     function sendWhatsApp() {
         const phone = "601168744885";
-        let message = `Hello! I saw your video of The White Lodge @ i-City and would like to check availability.`;
+        let message = `Hello! I'm interested in The White Lodge @ i-City. Can I check the availability?`;
         window.location.href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     }
 </script>
